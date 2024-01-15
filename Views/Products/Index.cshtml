@@ -1,0 +1,36 @@
+﻿@model List<ProductViewModel>
+
+<h1>Ürün Listesi</h1>
+@if (TempData["status"] != null)
+{
+    <div class="alert alert-primary" role="alert">
+        @TempData["status"]
+    </div>
+}
+<a asp-controller="Products" asp-action="AddProduct">Ürün Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Renk</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@item.Stock</td>
+            <td>@item.Color</td>
+            <td><a asp-controller="Products" asp-action="DeleteProduct" asp-route-id="@item.Id" class="btn btn-outline-dark">Sil</a></td>
+            <td><a asp-controller="Products" asp-action="UpdateProduct" asp-route-id="@item.Id" class="btn btn-outline-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>

@@ -1,0 +1,38 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MyAspNetCoreApp.Web.Migrations
+{
+    /// <inheritdoc />
+    public partial class RemoveHeightWidth : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "Height",
+                table: "Products");
+
+            migrationBuilder.DropColumn(
+                name: "Widht",
+                table: "Products");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<int>(
+                name: "Height",
+                table: "Products",
+                type: "int",
+                nullable: true);
+
+            migrationBuilder.AddColumn<int>(
+                name: "Widht",
+                table: "Products",
+                type: "int",
+                nullable: true);
+        }
+    }
+}

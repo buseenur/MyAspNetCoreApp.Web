@@ -1,0 +1,50 @@
+﻿@model Product
+
+<style>
+    .product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+
+
+@*<h1>Ürün Ekle</h1>
+    <div class="product ">
+        <form asp-action="AddProduct" asp-controller="Products" method="post">
+            <label>Ürün İsmi:</label>
+            <input placeholder="Adi" type="text" name="Name" />
+            <br />
+            <label>Ürün Fiyat:</label>
+            <input placeholder="Fiyat" type="text" name="Price" />
+            <br />
+            <label>Ürün Stok:</label>
+            <input placeholder="Stok" type="text" name="Stock" />
+            <br />
+            <label>Ürün Renk:</label>
+            <input placeholder="Renk" type="text" name="Color" />
+            <br />
+            <button type="submit"> Ürün Kaydet </button>
+        </form>
+    </div>*@
+
+
+<h1>Ürün Ekle</h1>
+    <div class="product ">
+        <form asp-action="AddProduct" asp-controller="Products" method="post">
+            <label>Ürün İsmi:</label>
+            <input placeholder="Adi" type="text" asp-for="Name" />
+            <br />
+            <label>Ürün Fiyat:</label>
+            <input placeholder="Fiyat" type="text" asp-for="Price" />
+            <br />
+            <label>Ürün Stok:</label>
+            <input placeholder="Stok" type="text" asp-for="Stock" />
+            <br />
+            <label>Ürün Renk:</label>
+            <input placeholder="Renk" type="text" asp-for="Color" />
+            <br />
+            <button type="submit"> Ürün Kaydet </button>
+        </form>
+    </div>
+
